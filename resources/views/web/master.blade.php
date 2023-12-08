@@ -13,7 +13,7 @@
     <link href="{{ asset('assets/web/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="{{ asset('assets/web/css/tiny-slider.css') }}" rel="stylesheet">
-    <link href="{{asset('assets/web/css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/web/css/style.css') }}" rel="stylesheet">
     <title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
 </head>
 
@@ -38,13 +38,31 @@
                     <li><a class="nav-link" href="shop.html">Shop</a></li>
                     <li><a class="nav-link" href="about.html">About us</a></li>
                     <li><a class="nav-link" href="services.html">Services</a></li>
-                    <li><a class="nav-link" href="blog.html">Blog</a></li>
                     <li><a class="nav-link" href="contact.html">Contact us</a></li>
+                    @if (auth('web')->check())
+                        <a class="nav-link" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="bx bx-log-out"></i> Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    @else
+                        <li><a class="nav-link" href="{{ route('login.user') }}">Login</a></li>
+                        <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+                    @endif
+
+
                 </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                    <li><a class="nav-link" href="#"><img src="{{asset('assets/web/images/user.svg')}}"></a></li>
-                    <li><a class="nav-link" href="cart.html"><img src="{{asset('assets/web/images/cart.svg')}}"></a></li>
+                    @if (auth('web')->check())
+                        <li>
+                            <a class="nav-link" href="#"><img src="{{ asset('assets/web/images/user.svg') }}"></a>
+                        </li>
+                    @endif
+                    <li><a class="nav-link" href="cart.html"><img src="{{ asset('assets/web/images/cart.svg') }}"></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -58,14 +76,14 @@
         <div class="container relative">
 
             <div class="sofa-img">
-                <img src="{{asset('assets/web/images/sofa.png')}}" alt="Image" class="img-fluid">
+                <img src="{{ asset('assets/web/images/sofa.png') }}" alt="Image" class="img-fluid">
             </div>
 
             <div class="row">
                 <div class="col-lg-8">
                     <div class="subscription-form">
                         <h3 class="d-flex align-items-center"><span class="me-1"><img
-                                    src="{{asset('assets/web/images/envelope-outline.svg') }}" alt="Image"
+                                    src="{{ asset('assets/web/images/envelope-outline.svg') }}" alt="Image"
                                     class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
 
                         <form action="#" class="row g-3">

@@ -19,7 +19,8 @@
 		@include('admin.layouts.main-sidebar')		
 		<!-- main-content -->
 		<div class="main-content app-content">
-			@include('admin.layouts.main-header')			
+			@include('admin.layouts.main-header')	
+			@include('sweetalert::alert')		
 			<!-- container -->
 			<div class="container-fluid">
 				@yield('page-header')

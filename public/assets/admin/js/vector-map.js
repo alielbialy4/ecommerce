@@ -53,4 +53,14 @@ $(function() {
 		hoverColor: '#f10075',
 		showLabels: true
 	});
+
+	$('#vmap10').vectorMap({
+		map: 'world',
+		color: '#f10075',
+		borderColor: '#fff',
+		backgroundColor: 'transparent',
+		hoverColor: '#f10075',
+		showLabels: true
+	});
+
 });

@@ -83,12 +83,20 @@ License        :   Licensed under ThemeForest License
 /* ######## FONT ######## */
 /* ############### FONTS IMPORT ############### */
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+@import url('https://fonts.cdnfonts.com/css/tajawal');
+
 /* ######## BOOTSTRAP ######## */
 /*Color variables*/
 /*gray variables*/
 /*white variables*/
-/*black variables*/
+/*black variables*6
 /*shadow variables*/
+
+p , h1 ,h2 ,h3 ,h4 ,h5{
+  font-size: 102% !important;
+  font-family: tajawal !important;
+
+} 
 html {
   font-family: sans-serif;
   line-height: 1.15;

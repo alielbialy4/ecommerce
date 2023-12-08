@@ -11,9 +11,16 @@ class Product extends Model
     protected $fillable = [
         'name',
         'description',
-        'price',
         'quantity',
-        'discount',
-        'category_id',
+        'price',
+        'section_id',
+        'discount'
     ];
+    public function image(){
+        return $this->hasOne(Image::class);
+    }
+
+    public function section() {
+        return $this->belongsTo(Section::class);
+    }
 }

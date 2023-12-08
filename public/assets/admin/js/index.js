@@ -63,7 +63,6 @@ $(function() {
 	});
 	/* Dashboard content closed*/
 	
-	
 	/* Apexcharts (#bar) */
 	var optionsBar = {
 	  chart: {
@@ -111,7 +110,6 @@ $(function() {
 			},
 		  },
 		  
-		  
 	  }],
 	   series: [{
 		  name: 'Impressions',
@@ -152,7 +150,6 @@ $(function() {
 	new ApexCharts(document.querySelector('#bar'), optionsBar).render();
 	
 	/* Apexcharts (#bar) closed */
-	
 	
 	/*--- Apex (#chart) ---*/
 	var options = {
@@ -226,8 +223,6 @@ $(function() {
 	var chart = new ApexCharts(document.querySelector("#chart"), options);
 	chart.render();
 	/*--- Apex (#chart)closed ---*/
-	
-	
 	
 	/*--- Apex (#spark1) ---*/
 	var spark1 = {
@@ -510,7 +505,6 @@ $(function() {
 	  }
 	}
 
-
 	new ApexCharts(document.querySelector("#spark1"), spark1).render();
 	new ApexCharts(document.querySelector("#spark2"), spark2).render();
 	new ApexCharts(document.querySelector("#spark3"), spark3).render();
@@ -519,10 +513,30 @@ $(function() {
 	
 	/*--- Apex (#spark5) closed ---*/
 	
-	
 	/*--- Map ---*/
 	$('#vmap2').vectorMap({
 		map: 'usa_en',
+		showTooltip: true,
+		backgroundColor: '#fff',
+		color: '#60adff',
+		colors: {
+			mo: '#9fceff',
+			fl: '#60adff',
+			or: '#409cff',
+			ca: '#005cbf',
+			tx: '#005cbf',
+			wy: '#005cbf',
+			ny: '#007bff'
+		},
+		hoverColor: '#222',
+		enableZoom: false,
+		borderWidth: 1,
+		borderColor: '#fff',
+		hoverOpacity: .85
+	});
+
+	$('#vmap10').vectorMap({
+		map: 'world',
 		showTooltip: true,
 		backgroundColor: '#fff',
 		color: '#60adff',

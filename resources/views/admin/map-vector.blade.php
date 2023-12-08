@@ -108,6 +108,19 @@
 							</div><!-- col-->
 						</div>
 					</div>
+
+					<div class="col-lg-6">
+						<div class="card" id="map8">
+							<div class="card-body">
+								<div class="main-content-label mg-b-5">
+									Vector Map: world
+								</div>
+								<p class="mg-b-20">It is Very Easy to Customize and it uses in your website apllication.</p>
+								<div class="ht-300" id="vmap10"></div>
+							</div><!-- col-->
+						</div>
+					</div>
+
 				</div>
 				<!-- /row -->
 			</div>
@@ -127,6 +140,7 @@
 <script src="{{URL::asset('assets/plugins/jqvmap/maps/jquery.vmap.germany.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/jqvmap/maps/jquery.vmap.russia.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/jqvmap/maps/jquery.vmap.france.js')}}"></script>
+<script src="{{URL::asset('assets/plugins/jqvmap/maps/jquery.vmap.world.js')}}"></script>
 <script src="{{URL::asset('assets/js/vector-map.js')}}"></script>
 <!-- Internal Vector-sampledata js -->
 <script src="{{URL::asset('assets/js/jquery.vmap.sampledata.js')}}"></script>

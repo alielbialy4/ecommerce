@@ -57,7 +57,7 @@ $( document ).ready(function() {
 		swal({
 			title: title,
 			text: message,
-			timer: 2000,
+			timer: 4000,
 			showConfirmButton: false
 		});
 	});
@@ -85,7 +85,6 @@ $( document ).ready(function() {
 			inputPlaceholder: "Your message"
 		},function(inputValue){
 
-
 			if (inputValue != "") {
 				swal("Input","You have entered : " + inputValue);
 
@@ -104,7 +103,6 @@ $( document ).ready(function() {
 			cancelButtonText: 'Stay on the page'
 		});
 	});
-
 
 	$("#click").click(function(){
 		swal('Congratulations!', 'Your message has been succesfully sent', 'success');
