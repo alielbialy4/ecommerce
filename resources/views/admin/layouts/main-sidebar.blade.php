@@ -72,6 +72,14 @@
                     <span class="side-menu__label mr-3">المستخدمين</span>
                 </a>
             </li>
+
+            <li class="slide">
+                <a class="side-menu__item" href="{{ route('product.deposit') }}">
+                    <i class="fa-solid fa-download" style="font-size: 20px"></i>
+
+                    <span class="side-menu__label mr-3">إيداع البضائع</span>
+                </a>
+            </li>
             
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . ($page = '#')) }}"><svg

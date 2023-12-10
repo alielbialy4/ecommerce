@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +19,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('web.index');
 })->name('dashboard.user');
+
+
+Route::middleware('auth:web')->prefix('user')->group(function(){
+
+    Route::get('/contact', [ContactController::class , 'index'] )->name('contact');
+
+});
 
 

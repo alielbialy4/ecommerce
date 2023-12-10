@@ -69,6 +69,7 @@
                                 <th class="wd-15p border-bottom-0">الصورة</th>
                                 <th class="wd-15p border-bottom-0">الاسم</th>
                                 <th class="wd-15p border-bottom-0"> الوصف </th>
+                                <th class="wd-15p border-bottom-0"> الكمية </th>
                                 <th class="wd-15p border-bottom-0">السعر</th>
                                 <th class="wd-15p border-bottom-0">التعديل</th>
                             </tr>
@@ -83,15 +84,14 @@
                                     </td>
                                     <td>{{ $product->name }}</td>
                                     <td> {{ $product->description }} </td>
+                                    <td> {{ $product->quantity }} </td>
                                     <td>{{ $product->price }} $</td>
 
                                     <td class="row">
-                                        <a class="btn btn-primary m-1"  href="{{ route('product.show', $product->id) }}">
+                                        <a class="btn btn-primary m-1"  href="{{ route('product.edit', $product->id) }}">
                                             <i class="fa fa-pencil" aria-hidden="true"></i>
                                         </a>
-                                        <a class="btn btn-primary m-1"  href="{{ route('product.show', $product->id) }}">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                        </a>
+                                       
                                         <form class="m-1" action="{{ route('product.destroy') }}" method="POST">
                                             @csrf
                                             @method('DELETE')

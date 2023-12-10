@@ -8,6 +8,10 @@
     <link href="{{ URL::asset('assets/admin/plugins/jquery-simple-datetimepicker/jquery.simple-dtpicker.css') }}"
         rel="stylesheet">
     <link href="{{ URL::asset('assets/admin/plugins/pickerjs/picker.min.css') }}" rel="stylesheet">
+
+    <link href="{{ URL::asset('assets/admin/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
+    <!---Internal Fancy uploader css-->
+    <link href="{{ URL::asset('assets/admin/plugins/fancyuploder/fancy_fileupload.css') }}" rel="stylesheet" />
     <!-- Internal Spectrum-colorpicker css -->
     <link href="{{ URL::asset('assets/admin/plugins/spectrum-colorpicker/spectrum.css') }}" rel="stylesheet">
 @endsection
@@ -16,8 +20,8 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">Forms</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                    Form-Elements</span>
+                <h4 class="content-title mb-0 my-auto">إضافة المنتجات</h4>
+
             </div>
         </div>
         <div class="d-flex my-xl-auto right-content">
@@ -54,60 +58,37 @@
     <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 m-auto">
         <div class="card  box-shadow-0">
             <div class="card-header">
-                <h4 class="card-title mb-1"> تعديل المنتج</h4>
+                <h4 class="card-title mb-1"> إيداع منتج</h4>
                 <p class="mb-2">
-
+                    يمكنك إيداع منتج من هنا
                 </p>
             </div>
             <div class="card-body pt-0">
-                <form class="form-horizontal" action="{{ route('product.edit.submit') }}" method="POST" enctype="multipart/form-data">
+                <form class="form-horizontal" action="{{ route('product.deposit.submit') }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
+
                     <div class="form-group">
-                        <input type="text" name="id" value="{{ $product->id }}" hidden>
-
-                        <input type="text" name="name" value="{{ $product->name }}" class="form-control"
-                            id="inputName" placeholder="Name"> <br>
-
-                        <label>وصف المنتج</label>
-
-                        <input type="text" name="description" value="{{ $product->description }}" class="form-control"
-                            id="inputName" placeholder="description"> <br>
-                        <label>الكمية</label>
-                        <input type="text" name="quantity" value="{{ $product->quantity }}" class="form-control"
-                            id="inputName" placeholder="quantity"> <br>
-                        <label>السعر</label>
-
-                        <input type="text" name="price" value="{{ $product->price }}" class="form-control"
-                            id="inputName" placeholder="price"> <br>
-
-
-                        <div class="form-group">
-                            <p class="mg-b-10">اختر التصنيف</p>
-                            <select name="section_id" class="form-control select2">
-                                @foreach ($sections as $section)
-                                    <option value="{{ $section->id }}"
-                                        {{ $product->section->id == $section->id ? 'selected' : '' }}>
-                                        {{ $section->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-
-
-
-
-                        <img src="{{ $product->image->path() }}" class="img-fluid mt-5" width="250" height="250">
-
-                        <div class="form-group mt-5">
-                            <input type="file" name="image" class="form-control-file" id="inputName">
-                        </div>
-
-
-
+                        <p class="mg-b-10">اختر المنتج</p>
+                        <select name="product_id" class="form-control select2">
+                            <option label="اختر المنتج">
+                            </option>
+                            @foreach ($products as $product)
+                                <option value="{{ $product->id }}">
+                                    {{ $product->name }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
-                    <div class="form-group mb-0 mt-3 justify-content-end mt-4">
+
+                    <div class="form-group">
+                        <input type="number" name="value" value="{{ old('value') }}" class="form-control"
+                            id="inputName" placeholder="اكتب الكمية التي تم إيداعها">
+                    </div>
+
+                    <div class="form-group mb-0 mt-3 justify-content-end">
                         <div>
-                            <button type="submit" class="btn btn-primary">submit</button>
+                            <button type="submit" class="btn btn-primary">اضف</button>
                         </div>
                     </div>
                 </form>
@@ -126,13 +107,9 @@
     <script src="{{ URL::asset('assets/admin/plugins/select2/js/select2.min.js') }}"></script>
     <!--Internal Ion.rangeSlider.min js -->
     <script src="{{ URL::asset('assets/admin/plugins/ion-rangeslider/js/ion.rangeSlider.min.js') }}"></script>
-    <!--Internal  jquery-simple-datetimepicker js -->
-    <script src="{{ URL::asset('assets/admin/plugins/amazeui-datetimepicker/js/amazeui.datetimepicker.min.js') }}">
-    </script>
-    <!-- Ionicons js -->
-    <script src="{{ URL::asset('assets/admin/plugins/jquery-simple-datetimepicker/jquery.simple-dtpicker.js') }}"></script>
-    <!--Internal  pickerjs js -->
-    <script src="{{ URL::asset('assets/admin/plugins/pickerjs/picker.min.js') }}"></script>
-    <!-- Internal form-elements js -->
+
     <script src="{{ URL::asset('assets/admin/js/form-elements.js') }}"></script>
+
+    <script src="{{ URL::asset('assets/admin/plugins/fileuploads/js/fileupload.js') }}"></script>
+    <script src="{{ URL::asset('assets/admin/plugins/fileuploads/js/file-upload.js') }}"></script>
 @endsection

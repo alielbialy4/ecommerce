@@ -27,7 +27,7 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
- 
+
 
 
 Route::middleware('auth:admin')->prefix('admin')->group(function () {
@@ -45,38 +45,28 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::get('/products', [ProductController::class, 'index'])->name('product.index');
     Route::get('/products/add', [ProductController::class, 'create'])->name('product.add');
     Route::post('/products/store', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/products/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::post('/products/edit/submit', [ProductController::class, 'editProduct'])->name('product.edit.submit');
     Route::get('/products/show', [ProductController::class, 'index'])->name('product.show');
+ 
+    // start Deposit goods
+    Route::get('/products/deposit/', [ProductController::class, 'DepositView'])->name('product.deposit');
+    Route::post('/products/deposit/submit', [ProductController::class, 'DepositOfProducts'])->name('product.deposit.submit');
+    // end Deposit goods
+
+
     Route::delete('/products/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
 
-        ######################################## users ###################################
 
-        Route::get('/users',[UserAdminController::class,'index'])->name('users.admin.index');
-        Route::post('/users/status', [UserAdminController::class, 'changeStatus'])->name('users.status');
-        Route::delete('/products/destroy', [UserAdminController::class, 'destroy'])->name('users.destroy');
+    ######################################## users ###################################
 
-
-
-
-
-
-
-
+    Route::get('/users', [UserAdminController::class, 'index'])->name('users.admin.index');
+    Route::post('/users/status', [UserAdminController::class, 'changeStatus'])->name('users.status');
+    Route::delete('/users/destroy', [UserAdminController::class, 'destroy'])->name('users.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
-Route::get('/test',function(){
+Route::get('/test', function () {
     return view('admin.form-advanced');
 });
-
-
-
-
-
-
-
-
-
-
-
-
