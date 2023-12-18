@@ -82,4 +82,8 @@ class UserAdminController extends Controller
         }
         
     }
+    public function showProducts()  {
+        return view('web.shop');
+        
+    }
 }

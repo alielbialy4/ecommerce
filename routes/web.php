@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\ContactController;
+use App\Http\Controllers\UserAdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +26,10 @@ Route::get('/', function () {
 Route::middleware('auth:web')->prefix('user')->group(function(){
 
     Route::get('/contact', [ContactController::class , 'index'] )->name('contact');
+    Route::get('/cart', [CartController::class , 'index'] )->name('cart');
+    Route::get('/products', [UserAdminController::class , 'showProducts'] )->name('products');
+
+
 
 });
 

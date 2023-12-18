@@ -35,7 +35,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ route('dashboard.user') }}">الرئيسية</a>
                     </li>
-                    <li><a class="nav-link" href="shop.html">المنتجات</a></li>
+                    <li><a class="nav-link" href="{{ route('products') }}">المنتجات</a></li>
                     <li><a class="nav-link" href="about.html">من نحن</a></li>
                     {{-- <li><a class="nav-link" href="services.html">Services</a></li> --}}
                     <li><a class="nav-link" href="{{ route('contact')}}">تواصل معنا</a></li>
@@ -61,7 +61,7 @@
                             <a class="nav-link" href="#"><img src="{{ asset('assets/web/images/user.svg') }}"></a>
                         </li>
                     @endif
-                    <li><a class="nav-link" href="cart.html"><img src="{{ asset('assets/web/images/cart.svg') }}"></a>
+                    <li><a class="nav-link" href="{{ route('cart') }}"><img src="{{ asset('assets/web/images/cart.svg') }}"></a>
                     </li>
                 </ul>
             </div>
