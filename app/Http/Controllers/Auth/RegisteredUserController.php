@@ -40,7 +40,7 @@ class RegisteredUserController extends Controller
 
         ]);
 
-        $formatBirthDate = Carbon::parse($request->date)->format('Y-m-d');
+        $formatBirthDate = Carbon::parse($request->birth_date)->format('Y-m-d');
     
 
         $user = User::create([

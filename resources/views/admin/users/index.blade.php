@@ -70,7 +70,7 @@
                                 <th class="col-2 border-bottom-0">البريد الالكتروني</th>
                                 <th class="col-2 border-bottom-0">الهاتف</th>
                                 {{-- <th class="col-2 border-bottom-0">الجنس</th> --}}
-                                <th class="col-2 border-bottom-0">تاريخ الميلاد</th>
+                                <th class="col-2 border-bottom-0">العمر</th>
                                 {{-- <th class="col-2 border-bottom-0">التعديل</th> --}}
                                 <th class="col-2 border-bottom-0">حذف</th>
                             </tr>
@@ -86,14 +86,14 @@
                                             @csrf
                                             <input type="text" name="id" value="{{  $user->id }}" hidden>
                                             <button class="btn {{ $user->status == 1 ? 'btn-success' : 'btn-danger'  }} " href="">
-                                                {{ $user->status == 1 ? 'Active' : 'Inactive'  }}
+                                                {{ $user->status == 1 ? 'نشط' : 'غير نشط'  }}
                                             </button>
                                         </form>
                                     </td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->phone }}</td>
                                     {{-- <td>{{ $user->gender }}</td> --}}
-                                    <td>{{ $user->birth_date }}</td>
+                                    <td>{{ $user->age() }}</td>
                                     
                                   
                                     <td>

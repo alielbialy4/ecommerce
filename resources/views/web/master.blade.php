@@ -35,7 +35,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ route('dashboard.user') }}">الرئيسية</a>
                     </li>
-                    <li><a class="nav-link" href="{{ route('products') }}">المنتجات</a></li>
+                    <li><a class="nav-link" href="{{ route('shop') }}">المنتجات</a></li>
                     <li><a class="nav-link" href="about.html">من نحن</a></li>
                     {{-- <li><a class="nav-link" href="services.html">Services</a></li> --}}
                     <li><a class="nav-link" href="{{ route('contact')}}">تواصل معنا</a></li>

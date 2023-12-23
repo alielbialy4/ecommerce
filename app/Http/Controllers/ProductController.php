@@ -100,10 +100,10 @@ class ProductController extends Controller
 
             // delete old image
             $image_path = $product->image->path;
-            $image = Image::where('product_id', $request->id )->delete();
+            $image = Image::where('product_id', $request->id)->delete();
 
-            if (Storage::exists('products/'.$image_path)) {
-                Storage::delete('products/'.$image_path);
+            if (Storage::exists('products/' . $image_path)) {
+                Storage::delete('products/' . $image_path);
             }
 
             // add new image to product
@@ -114,9 +114,6 @@ class ProductController extends Controller
                 'product_id' => $product->id,
                 'path' => $propsOfImg['imagePath'],
             ]);
-          
-
-            
         }
 
 
@@ -128,11 +125,12 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      */
 
-     public function DepositView (){
+    public function DepositView()
+    {
         $products = Product::all();
         return view('admin.products.deposit', compact('products'));
-     }
-    public function DepositOfProducts (Request $request)
+    }
+    public function DepositOfProducts(Request $request)
     {
         $request->validate([
             'value' => 'required|integer|max:20000|min:0|',
@@ -141,8 +139,8 @@ class ProductController extends Controller
         $product = Product::findOrFail($request->product_id);
         $product->update([
             'quantity' => $request->value + $product->quantity,
-        ]);        
-        Alert::success('تمت العملية بنجاح' , "تم  بنجاح عملية الإيداع الي المنتج . $product->name");
+        ]);
+        Alert::success('تمت العملية بنجاح', "تم  بنجاح عملية الإيداع الي المنتج . $product->name");
         return redirect()->route('product.index');
     }
 

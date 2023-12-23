@@ -79,8 +79,10 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
-                                        <img src="{{ $product->image->path()}}" class="rounded-circle"
-                                            width="50" height="50">
+                                        <img src="{{ $product->image->path() }}" class="rounded-circle"
+                                        width="50" height="50"> 
+                                        {{-- <img src="{{ $product->image->path() }}" class="rounded-circle"
+                                            width="50" height="50"> --}}
                                     </td>
                                     <td>{{ $product->name }}</td>
                                     <td> {{ $product->description }} </td>
