@@ -4,12 +4,17 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-5">
-                    <div class="intro-excerpt">
-                        <h1>Modern Interior <span clsas="d-block">Design Studio</span></h1>
-                        <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                            vulputate velit imperdiet dolor tempor tristique.</p>
-                        <p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#"
-                                class="btn btn-white-outline">Explore</a>
+                    <div class="intro-excerpt" dir="rtl">
+                        <h1>متجر إلكتروني للاثاث</h1>
+                        <p class="mb-4" >
+
+                           اكتشف عالمًا جديدًا من الإبداع والتميز مع منتجاتنا الفريدة في سوق أل. نقدم لك مجموعة متنوعة من
+                            المنتجات التي تجمع بين الأناقة والجودة العالية، مما يجعل تجربتك في التسوق لا تنسى. سواء كنت تبحث
+                            عن هدية فريدة أو ترغب في ترقية أسلوب حياتك اليومي
+                        </p>
+                        <p>
+                            <a href="{{ route('shop') }}" class="btn btn-secondary me-2">تسوق الان</a>
+
                         </p>
                     </div>
                 </div>
@@ -29,11 +34,14 @@
             <div class="row">
 
                 <!-- Start Column 1 -->
-                <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-                    <h2 class="mb-4 section-title">Crafted with excellent material.</h2>
-                    <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                        vulputate velit imperdiet dolor tempor tristique. </p>
-                    <p><a href="shop.html" class="btn">Explore</a></p>
+                <div class="col-md-12 col-lg-3 mb-5 mb-lg-0" dir="rtl">
+                    <h2 class="mb-4 section-title">جودة عالية و خامات مستوردة.</h2>
+                    <p class="mb-4">
+                        اكتشف عالمًا جديدًا من الإبداع والتميز مع منتجاتنا الفريدة في سوق أل. نقدم لك مجموعة متنوعة من
+                            المنتجات التي تجمع بين الأناقة والجودة العالية، مما يجعل تجربتك في التسوق لا تنسى. سواء كنت تبحث
+                            عن هدية فريدة أو ترغب في ترقية أسلوب حياتك اليومي
+                    </p>
+                    <p><a href="{{ route('shop') }}" class="btn">استكشف</a></p>
                 </div>
                 <!-- End Column 1 -->
 
@@ -119,7 +127,8 @@
                         <div class="col-6 col-md-6">
                             <div class="feature">
                                 <div class="icon">
-                                    <img src="{{ asset('assets/web/images/support.svg') }}" alt="Image" class="imf-fluid">
+                                    <img src="{{ asset('assets/web/images/support.svg') }}" alt="Image"
+                                        class="imf-fluid">
                                 </div>
                                 <h3>24/7 Support</h3>
                                 <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
@@ -130,7 +139,8 @@
                         <div class="col-6 col-md-6">
                             <div class="feature">
                                 <div class="icon">
-                                    <img src="{{ asset('assets/web/images/return.svg') }}" alt="Image" class="imf-fluid">
+                                    <img src="{{ asset('assets/web/images/return.svg') }}" alt="Image"
+                                        class="imf-fluid">
                                 </div>
                                 <h3>Hassle Free Returns</h3>
                                 <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
@@ -158,11 +168,14 @@
             <div class="row justify-content-between">
                 <div class="col-lg-7 mb-5 mb-lg-0">
                     <div class="imgs-grid">
-                        <div class="grid grid-1"><img src="{{ asset('assets/web/images/img-grid-1.jpg') }}" alt="Untree.co">
+                        <div class="grid grid-1"><img src="{{ asset('assets/web/images/img-grid-1.jpg') }}"
+                                alt="Untree.co">
                         </div>
-                        <div class="grid grid-2"><img src="{{ asset('assets/web/images/img-grid-2.jpg') }}" alt="Untree.co">
+                        <div class="grid grid-2"><img src="{{ asset('assets/web/images/img-grid-2.jpg') }}"
+                                alt="Untree.co">
                         </div>
-                        <div class="grid grid-3"><img src="{{ asset('assets/web/images/img-grid-3.jpg') }}" alt="Untree.co">
+                        <div class="grid grid-3"><img src="{{ asset('assets/web/images/img-grid-3.jpg') }}"
+                                alt="Untree.co">
                         </div>
                     </div>
                 </div>
@@ -219,7 +232,7 @@
                 <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
                     <div class="product-item-sm d-flex">
                         <div class="thumbnail">
-                            <img src="{{asset('assets/web/images/product-3.png')}}" alt="Image" class="img-fluid">
+                            <img src="{{ asset('assets/web/images/product-3.png') }}" alt="Image" class="img-fluid">
                         </div>
                         <div class="pt-3">
                             <h3>Ergonomic Chair</h3>
@@ -270,7 +283,8 @@
 
                                             <div class="author-info">
                                                 <div class="author-pic">
-                                                    <img src="{{asset('assets/web/images/person-1.png')}}" alt="Maria Jones" class="img-fluid">
+                                                    <img src="{{ asset('assets/web/images/person-1.png') }}"
+                                                        alt="Maria Jones" class="img-fluid">
                                                 </div>
                                                 <h3 class="font-weight-bold">Maria Jones</h3>
                                                 <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
@@ -298,7 +312,8 @@
 
                                             <div class="author-info">
                                                 <div class="author-pic">
-                                                    <img src="{{asset('assets/web/images/person-1.png')}}" alt="Maria Jones" class="img-fluid">
+                                                    <img src="{{ asset('assets/web/images/person-1.png') }}"
+                                                        alt="Maria Jones" class="img-fluid">
                                                 </div>
                                                 <h3 class="font-weight-bold">Maria Jones</h3>
                                                 <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
@@ -326,7 +341,8 @@
 
                                             <div class="author-info">
                                                 <div class="author-pic">
-                                                    <img src="{{asset('assets/web/images/person-1.png')}}" alt="Maria Jones" class="img-fluid">
+                                                    <img src="{{ asset('assets/web/images/person-1.png') }}"
+                                                        alt="Maria Jones" class="img-fluid">
                                                 </div>
                                                 <h3 class="font-weight-bold">Maria Jones</h3>
                                                 <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
@@ -363,8 +379,8 @@
 
                 <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
                     <div class="post-entry">
-                        <a href="#" class="post-thumbnail"><img src="{{asset('assets/web/images/post-1.jpg')}}" alt="Image"
-                                class="img-fluid"></a>
+                        <a href="#" class="post-thumbnail"><img src="{{ asset('assets/web/images/post-1.jpg') }}"
+                                alt="Image" class="img-fluid"></a>
                         <div class="post-content-entry">
                             <h3><a href="#">First Time Home Owner Ideas</a></h3>
                             <div class="meta">
@@ -377,8 +393,8 @@
 
                 <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
                     <div class="post-entry">
-                        <a href="#" class="post-thumbnail"><img src="{{asset('assets/web/images/post-2.jpg')}}" alt="Image"
-                                class="img-fluid"></a>
+                        <a href="#" class="post-thumbnail"><img src="{{ asset('assets/web/images/post-2.jpg') }}"
+                                alt="Image" class="img-fluid"></a>
                         <div class="post-content-entry">
                             <h3><a href="#">How To Keep Your Furniture Clean</a></h3>
                             <div class="meta">

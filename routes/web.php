@@ -30,3 +30,5 @@ Route::middleware('auth:web')->prefix('user')->group(function () {
     Route::get('/cart', [CartController::class, 'index'])->name('cart');
     Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 });
+
+Route::view('show-product-details', 'web.show-product');

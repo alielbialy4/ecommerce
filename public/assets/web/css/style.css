@@ -15,7 +15,13 @@
 /*white variables*/
 /*black variables*6
 /*shadow variables*/
+*{
+  font-family: tajawal !important;
 
+}
+span{
+  font-family:"Font Awesome 6 Brands" !important
+}
 p , h1 ,h2 ,h3 ,h4 ,h5{
   font-size: 102% !important;
   font-family: tajawal !important;

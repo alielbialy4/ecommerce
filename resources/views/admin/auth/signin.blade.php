@@ -34,14 +34,14 @@
                         <div class="row">
                             <div class="col-md-10 col-lg-10 col-xl-9 mx-auto">
                                 <div class="card-sigin">
-                                    <div class="mb-5 d-flex"> <a href="{{ url('/' . ($page = 'index')) }}"><img
+                                    <div class="mb-5 d-flex"> <a href="{{ url('/') }}"><img
                                                 src="{{ URL::asset('assets/admin/img/brand/favicon.png') }}"
                                                 class="sign-favicon ht-40" alt="logo"></a>
                                         <h1 class="main-logo1 ml-1 mr-0 my-auto tx-28">Va<span>le</span>x</h1>
                                     </div>
                                     <div class="card-sigin">
                                         <div class="main-signup-header">
-                                            <h2>Welcome Back</h2>
+                                            <h2>اهلا بك مجددا</h2>
 
                                             @if ($errors->any())
                                                 <div id="error-message" class="alert alert-danger">
@@ -54,92 +54,80 @@
                                             @endif
 
                                             <div class="form-group">
-                                                <label for="select">Choose your login method</label>
+                                                <label for="select">اختر طريقة التسجيل</label>
                                                 <select id="select" class="form-control">
                                                     <option value="" selected disabled>
-                                                        choose method
+                                                        اختر الطريقة
                                                     </option>
-                                                    <option value="user"> Login As User </option>
-                                                    <option value="admin">Login As Admin </option>
+                                                    <option value="user"> الدخول كمستخدم </option>
+                                                    <option value="admin">الدخول ك ادمن  </option>
                                                 </select>
                                             </div>
 
                                             <div class="loginform" id="user">
 
-                                                <h5 class="font-weight-semibold mb-4">login as user</h5>
+                                                <h5 class="font-weight-semibold mb-4">الدخول كمستخدم</h5>
                                                 <form method="POST" action="{{ route('login.user') }}">
                                                     @csrf
                                                     <div class="form-group">
-                                                        <label>Email</label>
-                                                        <input class="form-control" placeholder="Enter your email"
+                                                        <label>البريد الإلكتروني</label>
+                                                        <input class="form-control" placeholder="إدخل البريد الإلكتروني"
                                                             type="email" name="email" :value="old('email')" required
                                                             autofocus>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Password</label>
-                                                        <input class="form-control" placeholder="Enter your password"
+                                                        <label>الرقم السري</label>
+                                                        <input class="form-control" placeholder="إدخل الرقم السري"
                                                             type="password" name="password" required
                                                             autocomplete="current-password">
                                                     </div>
-                                                    <button type="submit" class="btn btn-main-primary btn-block">Sign
-                                                        In</button>
+                                                    <button type="submit" class="btn btn-main-primary btn-block">
+                                                        تسجيل الدخول
+                                                    </button>
                                                     <div class="row row-xs">
                                                         <div class="col-sm-6">
                                                             <button class="btn btn-block"><i class="fab fa-facebook-f"></i>
-                                                                Signup with Facebook</button>
+                                                                التسجيل بالفيس بوك</button>
                                                         </div>
                                                         <div class="col-sm-6 mg-t-10 mg-sm-t-0">
                                                             <button class="btn btn-info btn-block"><i
-                                                                    class="fab fa-twitter"></i> Signup with Twitter</button>
+                                                                    class="fab fa-twitter"></i> التسجيل بتويتر</button>
                                                         </div>
                                                     </div>
                                                 </form>
                                                 <div class="main-signin-footer mt-5">
-                                                    <p><a href="">Forgot password?</a></p>
-                                                    <p>Don't have an account? <a
-                                                            href="{{ url('/' . ($page = 'signup')) }}">Create an
-                                                            Account</a>
+                                                    <p><a href="">هل نسيت الرقم السري ؟</a></p>
+                                                    <p> ليس لديك  حساب  ! <a
+                                                            href="{{ route('register') }}">
+                                                            إنشاء حساب جديد
+                                                        </a>
                                                     </p>
                                                 </div>
                                             </div>
 
                                             <div class="loginform" id="admin">
 
-                                                <h5 class="font-weight-semibold mb-4">login as admin</h5>
+                                                <h5 class="font-weight-semibold mb-4">تسجيل الدخول كمستخدم</h5>
                                                 <form method="POST" action="{{ route('login.admin') }}">
                                                     @csrf
                                                     <div class="form-group">
-                                                        <label>Email</label>
-                                                        <input class="form-control" placeholder="Enter your email"
+                                                        <label>البريد الإلكتروني</label>
+                                                        <input class="form-control" placeholder="إدخل البريد الإلكتروني"
                                                             type="email" name="email" :value="old('email')" required
                                                             autofocus>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Password</label>
-                                                        <input class="form-control" placeholder="Enter your password"
+                                                        <label>الرقم السري</label>
+                                                        <input class="form-control" placeholder="إدخل الرقم السري"
                                                             type="password" name="password" required
                                                             autocomplete="current-password">
                                                     </div>
-                                                    <button type="submit" class="btn btn-main-primary btn-block">Sign
-                                                        In</button>
-                                                    <div class="row row-xs">
-                                                        <div class="col-sm-6">
-                                                            <button class="btn btn-block"><i class="fab fa-facebook-f"></i>
-                                                                Signup with Facebook</button>
-                                                        </div>
-                                                        <div class="col-sm-6 mg-t-10 mg-sm-t-0">
-                                                            <button class="btn btn-info btn-block"><i
-                                                                    class="fab fa-twitter"></i> Signup with Twitter</button>
-                                                        </div>
-                                                    </div>
+                                                    <button type="submit" class="btn btn-main-primary btn-block">
+                                                        تسجيل الدخول
+                                                    </button>
+                                                   
                                                 </form>
-                                                <div class="main-signin-footer mt-5">
-                                                    <p><a href="">Forgot password?</a></p>
-                                                    <p>Don't have an account? <a
-                                                            href="{{ url('/' . ($page = 'signup')) }}">Create an
-                                                            Account</a>
-                                                    </p>
-                                                </div>
+                                               
                                             </div>
 
                                         </div>

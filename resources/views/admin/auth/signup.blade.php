@@ -24,63 +24,68 @@
                         <div class="row">
                             <div class="col-md-10 col-lg-10 col-xl-9 mx-auto">
                                 <div class="card-sigin">
-                                    <div class="mb-5 d-flex"> <a href="{{ url('/' . ($page = 'index')) }}"><img
+                                    <div class="mb-5 d-flex"> <a href="{{ url('/') }}"><img
                                                 src="{{ URL::asset('assets/admin/img/brand/favicon.png') }}"
                                                 class="sign-favicon ht-40" alt="logo"></a>
                                         <h1 class="main-logo1 ml-1 mr-0 my-auto tx-28">Va<span>le</span>x</h1>
                                     </div>
                                     <div class="main-signup-header">
-                                        <h2 class="text-primary">Get Started</h2>
-                                        <h5 class="font-weight-normal mb-4">It's free to signup and only takes a minute.
-                                        </h5>
+                                        <h2 class="font-weight-normal mb-4">يمكنك إنشاء الحساب في بضعة دقائق.
+                                        </h2>
                                         <form method="POST" action="{{ route('register') }}" autocomplete="off">
                                             @csrf
                                             <div class="form-group">
-                                                <label>First Name</label>
+                                                <label>الاسم</label>
                                                 <input class="form-control" value="{{ old('name') }}" name="name"
-                                                autocomplete="off" aria-autocomplete="none" placeholder="Enter your name" type="text">
+                                                autocomplete="off" aria-autocomplete="none" placeholder="إدخل الاسم هنا" type="text">
                                             </div>
                                             <div class="form-group">
-                                                <label>Email</label>
+                                                <label>البريد الألكتروني</label>
                                                 <input class="form-control" value="{{ old('email') }}" name="email"
-                                                autocomplete="off" aria-autocomplete="none"   placeholder="Enter your email" type="text">
+                                                autocomplete="off" aria-autocomplete="none"   placeholder="إدخل البريد الإلكتروني" type="text">
                                             </div>
                                             <div class="form-group">
-                                                <label>Phone</label>
+                                                <label>رقن الهاتف</label>
                                                 <input class="form-control" value="{{ old('phone') }}" name="phone"
-                                                    placeholder="Enter your phone" type="text">
+                                                    placeholder="إدخل رقم الهاتف" type="text">
                                             </div>
                                             <div class="form-group">
-                                                <label>Choose Your Birth date</label>
+                                                <label>تاريخ الميلاد</label>
                                                 <input class="form-control" value="{{ old('birth_date') }}"
-                                                    name="birth_date" placeholder="Enter your birth date" type="date">
+                                                    name="birth_date" placeholder="اختر تاريخ الميلاد" type="date">
                                             </div>
 
                                             <div class="form-group">
-                                                <label>Password</label>
-                                                <input class="form-control" placeholder="Enter your password"
+                                                <label>الرقم السري</label>
+                                                <input class="form-control" placeholder="إدخل رقم سري مكون من 8 رموز"
                                                 autocomplete="off" aria-autocomplete="none"  name="password" type="password">
                                             </div>
                                             <div class="form-group">
-                                                <label>Password</label>
-                                                <input class="form-control" placeholder="Confirm your password"
+                                                <label>اكد الرقم السري</label>
+                                                <input class="form-control" placeholder="اعد كتابة الرقم السري"
                                                     name="password_confirmation" type="password">
                                             </div>
-                                            <button type="submit" class="btn btn-main-primary btn-block">Create Account</button>
+                                            <button type="submit" class="btn btn-main-primary btn-block">إنشئ الحساب</button>
                                             <div class="row row-xs">
                                                 <div class="col-sm-6">
-                                                    <button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup
-                                                        with Facebook</button>
+                                                    <button class="btn btn-block"><i class="fab fa-facebook-f"></i>
+                                                         سجل عن طريق فيس بوك
+                                                    </button>
                                                 </div>
                                                 <div class="col-sm-6 mg-t-10 mg-sm-t-0">
                                                     <button class="btn btn-info btn-block"><i class="fab fa-twitter"></i>
-                                                        Signup with Twitter</button>
+                                                        سجل عن طريق تويتر
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>
                                         <div class="main-signup-footer mt-5">
-                                            <p>Already have an account? <a href="{{ url('/' . ($page = 'signin')) }}">Sign
-                                                    In</a></p>
+                                            <p>
+                                                لديك حساب بالفعل !
+                                                 <a href="{{ route('login.user') }}">
+                                                    تسجيل الدخول
+                                                </a>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
